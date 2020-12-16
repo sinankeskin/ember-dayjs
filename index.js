@@ -5,11 +5,19 @@ module.exports = {
   included(app) {
     this._super.included.apply(this, arguments);
 
-    // InputMask JS
+    // dayjs
     app.import('node_modules/dayjs/dayjs.min.js');
-    app.import('node_modules/dayjs/locale/tr.js');
 
-    console.log('app', app.options['ember-dayjs']);
-    console.log('ok');
+    const options = app.options['ember-dayjs'];
+
+    if (options) {
+      const locales = options.locales;
+
+      if (locales && Array.isArray(locales)) {
+        locales.forEach((locale) => {
+          app.import(`node_modules/dayjs/locale/${locale}.js`);
+        });
+      }
+    }
   },
 };
