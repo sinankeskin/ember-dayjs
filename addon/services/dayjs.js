@@ -1,12 +1,17 @@
 /* globals dayjs */
 import Service from '@ember/service';
+import { tracked } from '@glimmer/tracking';
 
 export default class DayjsService extends Service {
-  getObject() {
+  @tracked
+  locale;
+
+  get obj() {
     return dayjs;
   }
 
   setLocale(locale) {
-    dayjs.locale(locale);
+    this.locale = locale;
+    this.obj.locale(locale);
   }
 }
