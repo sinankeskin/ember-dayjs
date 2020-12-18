@@ -3,6 +3,6 @@ import Helper from '@ember/component/helper';
 
 export default class Dayjs extends Helper {
   compute(params /*, hash*/) {
-    return dayjs(params[0]).format(params[1]);
+    return dayjs(params[0]).format();
   }
 }

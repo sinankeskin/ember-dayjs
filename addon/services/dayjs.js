@@ -2,7 +2,11 @@
 import Service from '@ember/service';
 
 export default class DayjsService extends Service {
-  changeLocale(locale) {
+  getObject() {
+    return dayjs;
+  }
+
+  setLocale(locale) {
     dayjs.locale(locale);
   }
 }
