@@ -18,6 +18,14 @@ module.exports = {
           app.import(`node_modules/dayjs/locale/${locale}.js`);
         });
       }
+
+      const plugins = options.plugins;
+
+      if (plugins && Array.isArray(plugins)) {
+        plugins.forEach((plugin) => {
+          app.import(`node_modules/dayjs/plugin/${plugin}.js`);
+        });
+      }
     }
   },
 };
