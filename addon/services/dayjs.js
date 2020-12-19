@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class DayjsService extends Service {
   @tracked
-  locale;
+  locale = 'en';
 
   get obj() {
     return dayjs;
@@ -12,6 +12,6 @@ export default class DayjsService extends Service {
 
   setLocale(locale) {
     this.locale = locale;
-    this.obj.locale(locale);
+    // this.obj.locale(locale);
   }
 }

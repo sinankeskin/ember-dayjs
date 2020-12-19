@@ -1,8 +1,14 @@
-/* globals dayjs */
-import { helper } from '@ember/component/helper';
+import Helper from '@ember/component/helper';
+import { inject as service } from '@ember/service';
 
-export default helper(function dayjsFromNow(params /*, hash*/) {
-  dayjs.extend(window.dayjs_plugin_relativeTime);
+export default class DayjsFromNow extends Helper {
+  @service
+  dayjs;
 
-  return dayjs(params[0]).fromNow(params[1] || false);
-});
+  compute(params /*, hash*/) {
+    return this.dayjs
+      .obj(params[0])
+      .locale(this.dayjs.locale)
+      .fromNow(params[1] || false);
+  }
+}

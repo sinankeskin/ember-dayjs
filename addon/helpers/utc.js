@@ -1,8 +1,11 @@
-/* globals dayjs */
-import { helper } from '@ember/component/helper';
+import Helper from '@ember/component/helper';
+import { inject as service } from '@ember/service';
 
-export default helper(function utc(params /*, hash*/) {
-  dayjs.extend(window.dayjs_plugin_utc);
+export default class DayjsFromNow extends Helper {
+  @service
+  dayjs;
 
-  return dayjs.utc(params[0]).format(params[1]);
-});
+  compute(params /*, hash*/) {
+    return this.dayjs.obj.utc(params[0]).locale(this.dayjs.locale).format(params[1]);
+  }
+}

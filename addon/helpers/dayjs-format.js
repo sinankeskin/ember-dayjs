@@ -1,6 +1,11 @@
-/* globals dayjs */
-import { helper } from '@ember/component/helper';
+import Helper from '@ember/component/helper';
+import { inject as service } from '@ember/service';
 
-export default helper(function dayjsFormat(params /*, hash*/) {
-  return dayjs(params[0]).format(params[1]);
-});
+export default class DayjsFormat extends Helper {
+  @service
+  dayjs;
+
+  compute(params /*, hash*/) {
+    return this.dayjs.obj(params[0]).locale(this.dayjs.locale).format(params[1]);
+  }
+}
