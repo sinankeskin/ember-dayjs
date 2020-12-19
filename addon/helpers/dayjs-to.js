@@ -1,12 +1,12 @@
 import BaseHelper from './base-helper';
 
-export default class DayjsFromNow extends BaseHelper {
+export default class DayjsTo extends BaseHelper {
   compute(params /*, hash*/) {
     this.dayjs.self.extend(window.dayjs_plugin_relativeTime);
 
     return this.dayjs
-      .self()
+      .self(params[0])
       .locale(this.dayjs.locale)
-      .fromNow(params[1] || false);
+      .to(params[1] || false);
   }
 }

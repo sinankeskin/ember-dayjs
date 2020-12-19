@@ -1,11 +1,7 @@
-import Helper from '@ember/component/helper';
-import { inject as service } from '@ember/service';
+import BaseHelper from './base-helper';
 
-export default class Dayjs extends Helper {
-  @service
-  dayjs;
-
+export default class Dayjs extends BaseHelper {
   compute(params /*, hash*/) {
-    return this.dayjs.obj(params[0]).locale(this.dayjs.locale).format();
+    return this.dayjs.self(params[0]);
   }
 }

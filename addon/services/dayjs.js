@@ -6,12 +6,11 @@ export default class DayjsService extends Service {
   @tracked
   locale = 'en';
 
-  get obj() {
+  get self() {
     return dayjs;
   }
 
   setLocale(locale) {
     this.locale = locale;
-    // this.obj.locale(locale);
   }
 }
