@@ -7,6 +7,6 @@ export default class DayjsFrom extends BaseHelper {
     return this.dayjs
       .self(params[0])
       .locale(this.dayjs.locale)
-      .from(params[1] || false);
+      .from(params[1], params[2] || false);
   }
 }

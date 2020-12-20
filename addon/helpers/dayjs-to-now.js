@@ -7,6 +7,6 @@ export default class DayjsToNow extends BaseHelper {
     return this.dayjs
       .self()
       .locale(this.dayjs.locale)
-      .toNow(params[1] || false);
+      .toNow(params[0] || false);
   }
 }
