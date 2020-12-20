@@ -1,1 +1,17 @@
-{{dayjs}}<br />{{utc}}<br />{{now}}
+{{dayjs}}
+<br />
+{{local}}
+<br />
+{{utc}}
+<br />
+{{now}}
+<br />
+{{dayjs-week-of-year}}
+<br />
+{{dayjs-to (now) (dayjs-add (now) 7 'day')}}
+<button type="button" {{on 'click' (fn this.changeLanguage 'tr')}}>
+  Türkçe
+</button>
+<button type="button" {{on 'click' (fn this.changeLanguage 'en')}}>
+  English
+</button>

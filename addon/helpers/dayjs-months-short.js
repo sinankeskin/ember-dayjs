@@ -4,6 +4,6 @@ export default class DayjsMonthsShort extends BaseHelper {
   compute(/*params , hash*/) {
     this.dayjs.self.extend(window.dayjs_plugin_localeData);
 
-    return this.dayjs.self().locale(this.dayjs.locale).monthsShort();
+    return this.dayjs.self.monthsShort();
   }
 }
