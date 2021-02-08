@@ -24,7 +24,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
-    "deploy": "npm version patch && git push origin master && git push origin --tags && npm publish",
+    "deploy": "npm version patch && git push && git push origin --tags && npm publish",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each"
