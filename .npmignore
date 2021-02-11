@@ -25,6 +25,9 @@
 /testem.js
 /tests/
 /yarn.lock
+/.prettierignore
+/.prettierrc.js
+/*.tgz
 .gitkeep
 
 # ember-try
