@@ -1,9 +1,7 @@
-import BaseHelper from './base-helper';
+import UtcHelper from './utc';
 
-export default class Utc extends BaseHelper {
+export default class Local extends UtcHelper {
   compute(params /*, hash*/) {
-    this.dayjs.self.extend(window.dayjs_plugin_utc);
-
-    return this.dayjs.self.utc(params[0]).local();
+    return super.compute(params).local();
   }
 }

@@ -1,7 +1,8 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+
 import { hbs } from 'ember-cli-htmlbars';
+import { render } from '@ember/test-helpers';
+import { setupRenderingTest } from 'ember-qunit';
 
 module('Integration | Helper | dayjs-add', function (hooks) {
   setupRenderingTest(hooks);
@@ -10,8 +11,8 @@ module('Integration | Helper | dayjs-add', function (hooks) {
   test('it renders', async function (assert) {
     this.set('inputValue', '1234');
 
-    await render(hbs`{{dayjs-add inputValue}}`);
+    await render(hbs`{{dayjs-add this.inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'Invalid Date');
   });
 });

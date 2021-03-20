@@ -1,9 +1,14 @@
 import BaseHelper from './base-helper';
+import { typeOf } from '@ember/utils';
 
 export default class Utc extends BaseHelper {
   compute(params /*, hash*/) {
-    this.dayjs.self.extend(window.dayjs_plugin_utc);
+    this.dayjs.extend('utc');
 
-    return this.dayjs.self.utc(params[0]);
+    if (typeOf(params) === 'object') {
+      this.dayjs.extend('objectSupport');
+    }
+
+    return this.dayjs.self.utc(...params);
   }
 }
