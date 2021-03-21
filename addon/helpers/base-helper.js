@@ -7,8 +7,6 @@ export default class BaseHelper extends Helper {
   dayjs;
 
   compute(_params, hash = {}) {
-    this.dayjs.useLocale(hash.locale || this.dayjs.locale);
-
     this.clearTimer();
 
     if (hash.interval) {

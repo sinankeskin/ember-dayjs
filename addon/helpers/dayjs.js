@@ -5,6 +5,8 @@ export default class Dayjs extends BaseHelper {
   compute(params, hash) {
     super.compute(params, hash);
 
+    this.dayjs.useLocale(hash.locale || this.dayjs.locale);
+
     if (typeOf(params) === 'object') {
       this.dayjs.extend('objectSupport');
     }
