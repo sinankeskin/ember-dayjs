@@ -6,9 +6,6 @@ export default class DayjsDuration extends BaseHelper {
 
     this.dayjs.extend('duration');
 
-    return this.dayjs.self
-      .duration(params[0])
-      .locale(hash.locale || this.dayjs.locale)
-      .humanize();
+    return this.dayjs.self.duration(params[0]);
   }
 }

@@ -150,13 +150,29 @@ _Note that `dayjs-to-now` is just a more verbose `dayjs-to` without `dateB`. You
 | `<number>` | Any value(s) [interpretable as a duration](#/docs/#/durations/creating) by `dayjs` (typically a `Number` in milliseconds) |
 | `<units>`  | An optional `String` to specify the units of `<number>` (typically `'seconds'`, `'minutes'`, `'hours'`...)                |
 
-Returns a Duration automatically [humanized](#/docs/#/durations/humanize). See [`dayjs#duration`](#/docs/#/durations/creating/).
+**Examples**
+
+```hbs
+{{dayjs-duration 100}} {{!-- duration object --}}
+{{dayjs-duration 24 'hours'}} {{!-- duration object --}}
+```
+
+### dayjs-duration-humanize
+
+```hbs
+{{dayjs-duration-humanize <number> [<units>]}}
+```
+
+| Parameters | Values                                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `<number>` | Any value(s) [interpretable as a duration](#/docs/#/durations/creating) by `dayjs` (typically a `Number` in milliseconds) |
+| `<units>`  | An optional `String` to specify the units of `<number>` (typically `'seconds'`, `'minutes'`, `'hours'`...)                |
 
 **Examples**
 
 ```hbs
-{{dayjs-duration 100}} {{!-- a few seconds --}}
-{{dayjs-duration 24 'hours'}} {{!-- a day --}}
+{{dayjs-duration-humanize 100}} {{!-- a few seconds --}}
+{{dayjs-duration-humanize 24 'hours'}} {{!-- a day --}}
 ```
 
 ### dayjs-calendar
