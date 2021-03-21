@@ -1,7 +1,9 @@
 import BaseHelper from './base-helper';
 
 export default class DayjsMonths extends BaseHelper {
-  compute(/*params , hash*/) {
+  compute(params, hash) {
+    super.compute(params, hash);
+
     this.dayjs.extend('localeData');
 
     return this.dayjs.self.months();

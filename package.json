@@ -1,7 +1,7 @@
 {
   "name": "ember-dayjs",
   "version": "0.0.20",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "day.js template helpers and a service for Ember.",
   "keywords": [
     "ember-addon",
     "dayjs",

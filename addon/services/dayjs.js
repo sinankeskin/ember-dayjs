@@ -14,19 +14,21 @@ export default class DayjsService extends Service {
   }
 
   setLocale(locale) {
+    this.useLocale(locale);
+
     this.locale = locale;
   }
 
-  useLocale(localeAbbr) {
-    assert('Locale cannot be null.', isPresent(localeAbbr));
+  useLocale(locale) {
+    assert('Locale cannot be null.', isPresent(locale));
 
-    const localeName = localeAbbr.toLowerCase();
+    const localeName = locale.toLowerCase();
 
     if (isEqual(localeName, 'en')) {
       return;
     }
 
-    const locale = `dayjs_locale_${localeName}`;
+    const fullLocaleName = `dayjs_locale_${localeName}`;
 
     assert(
       `${localeName} locale not found. Please add to your app config in ember-cli-build.js file to include like:
@@ -34,24 +36,34 @@ export default class DayjsService extends Service {
       locales: ['${localeName}'],
     }
    After that, usually you need to restart your application.`,
-      isPresent(window[locale])
+      isPresent(window[fullLocaleName])
     );
   }
 
-  extend(pluginName) {
-    assert('Plugin name cannot be null.', isPresent(pluginName));
+  setTimeZone(timeZone) {
+    this.extend('timezone');
 
-    const plugin = `dayjs_plugin_${pluginName}`;
+    this.self.tz.setDefault(timeZone);
+  }
+
+  resetTimezone() {
+    this.setTimeZone();
+  }
+
+  extend(plugin) {
+    assert('Plugin name cannot be null.', isPresent(plugin));
+
+    const fullPluginName = `dayjs_plugin_${plugin}`;
 
     assert(
-      `${pluginName} plugin not found. Please add to your app config in ember-cli-build.js file to include like:
+      `${plugin} plugin not found. Please add to your app config in ember-cli-build.js file to include like:
     'ember-dayjs': {
-      plugins: ['${pluginName}'],
+      plugins: ['${plugin}'],
     }
     Notice that plugin names are case-sensitive and after that, usually you need to restart your application.`,
-      isPresent(window[plugin])
+      isPresent(window[fullPluginName])
     );
 
-    this.self.extend(window[plugin]);
+    this.self.extend(window[fullPluginName]);
   }
 }

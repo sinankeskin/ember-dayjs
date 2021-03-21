@@ -2,11 +2,11 @@ import BaseHelper from './base-helper';
 
 export default class DayjsFormat extends BaseHelper {
   compute(params, hash) {
-    this.dayjs.useLocale(this.dayjs.locale);
+    super.compute(params, hash);
 
     return this.dayjs
       .self(params[0])
-      .locale(this.dayjs.locale)
+      .locale(hash.locale || this.dayjs.locale)
       .format(hash.outputFormat);
   }
 }
