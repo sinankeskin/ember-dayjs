@@ -29,6 +29,7 @@
 /.prettierrc.js
 /*.tgz
 .gitkeep
+/.github/
 
 # ember-try
 /.node_modules.ember-try/
