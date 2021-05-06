@@ -28,7 +28,7 @@
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
-    "update": "ecu --to latest && ncu -u && npm install && npm run lint:fix && npm run lint && git commit -am 'Update some packages' && git push",
+    "update": "ecu --to latest && ncu -u && npm install && npm audit fix --audit-level=high && npm run lint:fix && npm run lint && git commit -am 'Update some packages' && git push",
     "update:all": "run-s update deploy"
   },
   "dependencies": {
