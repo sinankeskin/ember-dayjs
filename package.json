@@ -28,7 +28,7 @@
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
-    "update": "ecu --to latest && ncu -u && npm install && npm audit fix --audit-level=high && npm run lint:fix && npm run lint && git commit -am 'Update some packages' && git push",
+    "update": "ecu --to latest && ncu -u && npm install && npm run lint:fix && npm run lint && git commit -am 'Update some packages' && git push",
     "update:all": "run-s update deploy"
   },
   "dependencies": {
@@ -58,7 +58,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "^3.27.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^3.4.0",
+    "ember-template-lint": "^3.4.1",
     "ember-try": "^1.4.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
