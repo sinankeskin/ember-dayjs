@@ -24,7 +24,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
-    "deploy": "npm version minor && git push && git push origin --tags && npm publish",
+    "deploy": "npm version patch && git push && git push origin --tags && npm publish",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
@@ -60,7 +60,7 @@
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^3.5.0",
     "ember-try": "^1.4.0",
-    "eslint": "^7.29.0",
+    "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-ember": "^10.5.1",
     "eslint-plugin-node": "^11.1.0",
@@ -70,7 +70,7 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "webpack": "^5.40.0"
+    "webpack": "^5.42.0"
   },
   "engines": {
     "node": "10.* || >= 12"
