@@ -32,7 +32,7 @@
     "update:all": "run-s update deploy"
   },
   "dependencies": {
-    "dayjs": "^1.10.5",
+    "dayjs": "^1.10.6",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1"
   },
@@ -70,7 +70,7 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "webpack": "^5.42.0"
+    "webpack": "^5.44.0"
   },
   "engines": {
     "node": "10.* || >= 12"
