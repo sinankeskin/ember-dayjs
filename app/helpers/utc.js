@@ -1,1 +1,1 @@
-export { default, utc } from 'ember-dayjs/helpers/utc';
+export { default } from 'ember-dayjs/helpers/utc';

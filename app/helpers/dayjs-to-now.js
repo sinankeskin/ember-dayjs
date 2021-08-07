@@ -1,1 +1,1 @@
-export { default, dayjsToNow } from 'ember-dayjs/helpers/dayjs-to-now';
+export { default } from 'ember-dayjs/helpers/dayjs-to-now';

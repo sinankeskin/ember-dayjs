@@ -1,1 +1,1 @@
-export { default, dayjsWeekdays } from 'ember-dayjs/helpers/dayjs-weekdays';
+export { default } from 'ember-dayjs/helpers/dayjs-weekdays';

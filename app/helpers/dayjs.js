@@ -1,1 +1,1 @@
-export { default, dayjs } from 'ember-dayjs/helpers/dayjs';
+export { default } from 'ember-dayjs/helpers/dayjs';

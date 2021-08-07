@@ -1,4 +1,1 @@
-export {
-  default,
-  dayjsMonthsShort,
-} from 'ember-dayjs/helpers/dayjs-months-short';
+export { default } from 'ember-dayjs/helpers/dayjs-months-short';

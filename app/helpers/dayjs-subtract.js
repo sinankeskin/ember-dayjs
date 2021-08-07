@@ -1,1 +1,1 @@
-export { default, dayjsSubtract } from 'ember-dayjs/helpers/dayjs-subtract';
+export { default } from 'ember-dayjs/helpers/dayjs-subtract';
