@@ -46,28 +46,30 @@ Returns a Dayjs with [UTC mode](http://dayjs.com/docs/#/parsing/utc/) set.
 **Example**
 
 ```hbs
-{{utc '2001-10-31T08:24:56'}} {{!-- Wed Oct 31 2001 08:24:56 GMT+0000 --}}
-{{utc}} {{!-- current time utc, like Mon Feb 12 2018 20:33:08 GMT+0000 --}}
-{{utc (dayjs '2018-01-01T00:00:00+01:00' 'YYYY-MM-DD HH:mm:ssZ')}}  {{!-- Sun Dec 31 2017 23:00:00 GMT+0000 --}}
+{{utc '2001-10-31T08:24:56'}}
+{{! Wed Oct 31 2001 08:24:56 GMT+0000 }}
+{{utc}}
+{{! current time utc, like Mon Feb 12 2018 20:33:08 GMT+0000 }}
+{{utc (dayjs '2018-01-01T00:00:00+01:00' 'YYYY-MM-DD HH:mm:ssZ')}}
+{{! Sun Dec 31 2017 23:00:00 GMT+0000 }}
 ```
 
 ### dayjs-format
 
 ```hbs
-{{dayjs-format <date> [outputFormat=dayjs.defaultFormat]}}
+{{dayjs-format <date> [outputFormat=dayjs.defaultFormat] [<inputFormat>]}}
 ```
 
 | Parameters     | Values                                                                                                                                       |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<date>`       | Any value(s) [interpretable as a date/time](https://day.js.org/docs/en/parse/parse) by `dayjs` (a date `String` or a `Dayjs` or a `Date`...) |
 | `outputFormat` | An optional date/time `String` [output format](https://day.js.org/docs/en/display/format), defaults to `dayjs.defaultFormat`                 |
-
-_NOTE: for all other helpers, the input format string is the second argument._
+| `inputFormat`  | <inputFormat> An optional named argument for date/time String input format                                                                                      |
 
 **Example**
 
 ```hbs
-{{dayjs-format '12-1995-25' 'MM/DD/YYYY'}} {{!-- 25/12/1995 --}}
+{{dayjs-format '12-1995-25' 'MM/DD/YYYY' inputFormat='MM-YYYY-DD'}} {{! 25/12/1995 }}
 ```
 
 ### timezone
@@ -107,10 +109,13 @@ Returns the time between `<dateA>` and `<dateB>` relative to `<dateB>`. See [`da
 **Examples**
 
 ```hbs
-{{!-- in January 2018 at time of writing --}}
-{{dayjs-from '2995-12-25'}} {{!-- in 978 years --}}
-{{dayjs-from-now '2995-12-25'}} {{!-- in 978 years --}}
-{{dayjs-from '1995-12-25' '2995-12-25' hideAffix=true}} {{!-- 1000 years --}}
+{{! in January 2018 at time of writing }}
+{{dayjs-from '2995-12-25'}}
+{{! in 978 years }}
+{{dayjs-from-now '2995-12-25'}}
+{{! in 978 years }}
+{{dayjs-from '1995-12-25' '2995-12-25' hideAffix=true}}
+{{! 1000 years }}
 ```
 
 ### dayjs-to / dayjs-to-now
@@ -133,10 +138,13 @@ _Note that `dayjs-to-now` is just a more verbose `dayjs-to` without `dateB`. You
 **Examples**
 
 ```hbs
-{{!-- in January 2018 at time of writing --}}
-{{dayjs-to '2995-12-25'}} {{!-- 978 years ago --}}
-{{dayjs-to '1995-12-25' '2995-12-25'}} {{!-- in 1000 years --}}
-{{dayjs-to-now '1995-12-25' hideAffix=true}} {{!-- 22 years --}}
+{{! in January 2018 at time of writing }}
+{{dayjs-to '2995-12-25'}}
+{{! 978 years ago }}
+{{dayjs-to '1995-12-25' '2995-12-25'}}
+{{! in 1000 years }}
+{{dayjs-to-now '1995-12-25' hideAffix=true}}
+{{! 22 years }}
 ```
 
 ### dayjs-duration
@@ -153,8 +161,10 @@ _Note that `dayjs-to-now` is just a more verbose `dayjs-to` without `dateB`. You
 **Examples**
 
 ```hbs
-{{dayjs-duration 100}} {{!-- duration object --}}
-{{dayjs-duration 24 'hours'}} {{!-- duration object --}}
+{{dayjs-duration 100}}
+{{! duration object }}
+{{dayjs-duration 24 'hours'}}
+{{! duration object }}
 ```
 
 ### dayjs-duration-humanize
@@ -171,8 +181,10 @@ _Note that `dayjs-to-now` is just a more verbose `dayjs-to` without `dateB`. You
 **Examples**
 
 ```hbs
-{{dayjs-duration-humanize 100}} {{!-- a few seconds --}}
-{{dayjs-duration-humanize 24 'hours'}} {{!-- a day --}}
+{{dayjs-duration-humanize 100}}
+{{! a few seconds }}
+{{dayjs-duration-humanize 24 'hours'}}
+{{! a day }}
 ```
 
 ### dayjs-calendar
@@ -189,9 +201,11 @@ _Note that `dayjs-to-now` is just a more verbose `dayjs-to` without `dateB`. You
 **Examples**
 
 ```hbs
-{{!-- in March 2021 at time of writing --}}
-{{dayjs-from-now '2021-03-19'}} {{!-- 2 days ago --}}
-{{dayjs-calendar '2021-03-20'}} {{!-- Yesterday at 12:00 AM --}}
+{{! in March 2021 at time of writing }}
+{{dayjs-from-now '2021-03-19'}}
+{{! 2 days ago }}
+{{dayjs-calendar '2021-03-20'}}
+{{! Yesterday at 12:00 AM }}
 ```
 
 ### dayjs-diff
@@ -212,8 +226,10 @@ Returns the difference in `precision` units between `<dateA>` and `<dateB>` with
 **Examples**
 
 ```hbs
-{{dayjs-diff '2018-01-25' '2018-01-26'}} {{!-- 86400000 --}}
-{{dayjs-diff '2018-01-25' '2018-01-26' precision='years' float=true}} {{!-- 0.0026881720430107525 --}}
+{{dayjs-diff '2018-01-25' '2018-01-26'}}
+{{! 86400000 }}
+{{dayjs-diff '2018-01-25' '2018-01-26' precision='years' float=true}}
+{{! 0.0026881720430107525 }}
 ```
 
 ### dayjs-add
@@ -233,13 +249,13 @@ Mutates the original dayjs by adding time. See [`dayjs#add`](#/docs/#/manipulati
 **Examples**
 
 ```hbs
-{{!-- Add 6 days to a date --}}
+{{! Add 6 days to a date }}
 {{dayjs-add '10-19-2019' 6 precision='days'}}
 
-{{!-- Add 6 days to a date --}}
+{{! Add 6 days to a date }}
 {{dayjs-add '10-19-2019' (dayjs-duration (hash days=6))}}
 
-{{!-- Print a date 6 days from now --}}
+{{! Print a date 6 days from now }}
 {{dayjs-add 6 precision='days'}}
 ```
 
@@ -260,13 +276,13 @@ Mutates the original dayjs by removing time. See [`dayjs#subtract`](#/docs/#/man
 **Examples**
 
 ```hbs
-{{!-- Remove 6 days from a date --}}
+{{! Remove 6 days from a date }}
 {{dayjs-subtract '10-19-2019' 6 precision='days'}}
 
-{{!-- Remove 6 days from a date --}}
+{{! Remove 6 days from a date }}
 {{dayjs-subtract '10-19-2019' (dayjs-duration (hash days=6))}}
 
-{{!-- Print a date 6 days earlier --}}
+{{! Print a date 6 days earlier }}
 {{dayjs-subtract 6 precision='days'}}
 ```
 
@@ -291,9 +307,12 @@ Returns a `Boolean` that indicates if `<dateA>` is respectively before/after/the
 **Examples**
 
 ```hbs
-{{dayjs-is-before '2995-12-25'}} {{!-- false --}}
-{{dayjs-is-before '2018-01-25' '2018-01-26' precision='years'}} {{!-- false --}}
-{{dayjs-is-same-or-after '2018-01-25' '2018-01-26' precision='years'}} {{!-- true --}}
+{{dayjs-is-before '2995-12-25'}}
+{{! false }}
+{{dayjs-is-before '2018-01-25' '2018-01-26' precision='years'}}
+{{! false }}
+{{dayjs-is-same-or-after '2018-01-25' '2018-01-26' precision='years'}}
+{{! true }}
 ```
 
 ### is-between
@@ -315,8 +334,16 @@ Returns a `Boolean` that indicates if `<date>` is between `<dateA>` and `<dateB>
 **Examples**
 
 ```hbs
-{{dayjs-is-between '1995-12-25' '2995-12-25'}} {{!-- true --}}
-{{dayjs-is-between '1995-12-25' '1995-12-25' '2995-12-25' precision='years' inclusivity='()'}} {{!-- true --}}
+{{dayjs-is-between '1995-12-25' '2995-12-25'}}
+{{! true }}
+{{dayjs-is-between
+  '1995-12-25'
+  '1995-12-25'
+  '2995-12-25'
+  precision='years'
+  inclusivity='()'
+}}
+{{! true }}
 ```
 
 ### now
@@ -331,8 +358,10 @@ Returns the present Dayjs.
 **Examples**
 
 ```hbs
-{{now}} {{!-- Current Date Time --}}
-{{now interval=1000}} {{!-- <current date and updating every 1-second (1000 milliseconds).> --}}
+{{now}}
+{{! Current Date Time }}
+{{now interval=1000}}
+{{! <current date and updating every 1-second (1000 milliseconds).> }}
 ```
 
 ### unix
@@ -350,9 +379,11 @@ Returns a Dayjs corresponding to the `<timestamp>`.
 **Examples**
 
 ```hbs
-{{unix 1516586508}} {{!-- Sun Jan 21 2018 21:01:48 GMT-0500 --}}
-{{!-- Warning: The passing argument must be a number --}}
-{{unix '1516586508'}} {{!-- Invalid date --}}
+{{unix 1516586508}}
+{{! Sun Jan 21 2018 21:01:48 GMT-0500 }}
+{{! Warning: The passing argument must be a number }}
+{{unix '1516586508'}}
+{{! Invalid date }}
 ```
 
 ### Common optional named arguments
@@ -367,8 +398,10 @@ All helpers accept the following optional named arguments (even though they are 
 **Examples**
 
 ```hbs
-{{now interval=1000}} {{!-- <current date and updating every 1-second (1000 milliseconds)> --}}
-{{dayjs-is-before (now) '2018-01-26' interval=60000}} {{!-- if this was true initially, it will always be true despite interval --}}
+{{now interval=1000}}
+{{! <current date and updating every 1-second (1000 milliseconds)> }}
+{{dayjs-is-before (now) '2018-01-26' interval=60000}}
+{{! if this was true initially, it will always be true despite interval }}
 ```
 
 ### i18n support

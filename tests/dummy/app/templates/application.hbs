@@ -14,11 +14,13 @@
 <br />
 {{dayjs-calendar (now)}}
 <br />
-{{dayjs-duration 3600}}
+{{dayjs-duration 24 'hours'}}
 <br />
-<button type="button" {{on 'click' (fn this.changeLanguage 'tr')}}>
+{{dayjs-duration-humanize 24 'hours'}}
+<br />
+<button type='button' {{on 'click' (fn this.changeLanguage 'tr')}}>
   Türkçe
 </button>
-<button type="button" {{on 'click' (fn this.changeLanguage 'en')}}>
+<button type='button' {{on 'click' (fn this.changeLanguage 'en')}}>
   English
 </button>

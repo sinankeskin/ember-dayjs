@@ -8,7 +8,14 @@ module.exports = function (defaults) {
     // Add options here
     'ember-dayjs': {
       locales: ['tr'],
-      plugins: ['utc', 'weekOfYear', 'relativeTime', 'duration', 'calendar'],
+      plugins: [
+        'utc',
+        'weekOfYear',
+        'relativeTime',
+        'duration',
+        'calendar',
+        'customParseFormat',
+      ],
     },
   });
 
