@@ -1,6 +1,6 @@
 {
   "name": "ember-dayjs",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "description": "day.js template helpers and a service for Ember.",
   "keywords": [
     "ember-addon",
