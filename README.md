@@ -10,6 +10,9 @@ Just replace all `moment-` with `dayjs-` and try.
 * Ember CLI v3.24 or above
 * Node.js v12 or above
 
+
+## Installation
+
 ```
 ember install ember-dayjs
 ```
