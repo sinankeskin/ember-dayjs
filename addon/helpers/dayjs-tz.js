@@ -6,6 +6,6 @@ export default class DayjsTz extends BaseHelper {
 
     this.dayjs.extend('timezone');
 
-    return this.dayjs.tz(params[0], params[1]);
+    return this.dayjs.self.tz(params[0], params[1]);
   }
 }
