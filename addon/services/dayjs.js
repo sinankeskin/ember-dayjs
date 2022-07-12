@@ -28,7 +28,7 @@ export default class DayjsService extends Service {
       return;
     }
 
-    const fullLocaleName = `dayjs_locale_${localeName}`;
+    const fullLocaleName = `dayjs_locale_${localeName.replace('-', '_')}`;
 
     assert(
       `${localeName} locale not found. Please add to your app config in ember-cli-build.js file to include like:
