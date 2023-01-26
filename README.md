@@ -373,17 +373,17 @@ Returns the present Dayjs.
 
 | Parameters    | Values                                                                                                      |
 | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| `<timestamp>` | An integer `Number` value representing the number of seconds since the Unix Epoch (January 1 1970 12AM UTC) |
+| `<timestamp>` | An integer `Number` value representing the number of milliseconds since the Unix Epoch (January 1 1970 12AM UTC) |
 
 Returns a Dayjs corresponding to the `<timestamp>`.
 
 **Examples**
 
 ```hbs
-{{unix 1516586508}}
-{{! Sun Jan 21 2018 21:01:48 GMT-0500 }}
+{{unix 1548381600000}}
+{{! Thursday, 26 January 2023 19:11:32 }}
 {{! Warning: The passing argument must be a number }}
-{{unix '1516586508'}}
+{{unix '1548381600000'}}
 {{! Invalid date }}
 ```
 
