@@ -1,0 +1,115 @@
+{
+  "name": "ember-dayjs",
+  "version": "0.10.6",
+  "description": "day.js template helpers and a service for Ember.",
+  "keywords": [
+    "ember-addon",
+    "dayjs",
+    "ember-dayjs",
+    "date helpers"
+  ],
+  "repository": "https://github.com/sinankeskin/ember-dayjs",
+  "license": "MIT",
+  "author": "Sinan Keskin <sinan@kesk.in> (https://kesk.in)",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "deploy": "npm version patch && git push && git push origin --tags && npm publish",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "test:ember": "ember test",
+    "test:ember-compatibility": "ember try:each",
+    "update": "ecu --to latest && ncu -u && npm install && npm run lint:fix && npm run lint && git commit -am \"Update some packages\" && git push",
+    "update:all": "run-s update deploy"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.4",
+    "dayjs": "^1.11.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.20.13",
+    "@embroider/addon-dev": "^3.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "eslint-plugin-decorator-position": "^5.0.2",
+    "rollup": "^3.18.0",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "peerDependencies": {
+    "ember-source": "^3.28.0 || ^4.0.0"
+  },
+  "engines": {
+    "node": "14.* || 16.* || >= 18"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "app-js": {
+      "./helpers/base-helper.js": "./dist/_app_/helpers/base-helper.js",
+      "./helpers/dayjs-add.js": "./dist/_app_/helpers/dayjs-add.js",
+      "./helpers/dayjs-calendar.js": "./dist/_app_/helpers/dayjs-calendar.js",
+      "./helpers/dayjs-date-of-month.js": "./dist/_app_/helpers/dayjs-date-of-month.js",
+      "./helpers/dayjs-day-of-week.js": "./dist/_app_/helpers/dayjs-day-of-week.js",
+      "./helpers/dayjs-day-of-year.js": "./dist/_app_/helpers/dayjs-day-of-year.js",
+      "./helpers/dayjs-days-in-month.js": "./dist/_app_/helpers/dayjs-days-in-month.js",
+      "./helpers/dayjs-diff.js": "./dist/_app_/helpers/dayjs-diff.js",
+      "./helpers/dayjs-duration-humanize.js": "./dist/_app_/helpers/dayjs-duration-humanize.js",
+      "./helpers/dayjs-duration.js": "./dist/_app_/helpers/dayjs-duration.js",
+      "./helpers/dayjs-end-of.js": "./dist/_app_/helpers/dayjs-end-of.js",
+      "./helpers/dayjs-format.js": "./dist/_app_/helpers/dayjs-format.js",
+      "./helpers/dayjs-from-now.js": "./dist/_app_/helpers/dayjs-from-now.js",
+      "./helpers/dayjs-from.js": "./dist/_app_/helpers/dayjs-from.js",
+      "./helpers/dayjs-is-after.js": "./dist/_app_/helpers/dayjs-is-after.js",
+      "./helpers/dayjs-is-before.js": "./dist/_app_/helpers/dayjs-is-before.js",
+      "./helpers/dayjs-is-between.js": "./dist/_app_/helpers/dayjs-is-between.js",
+      "./helpers/dayjs-is-dayjs.js": "./dist/_app_/helpers/dayjs-is-dayjs.js",
+      "./helpers/dayjs-is-leap-year.js": "./dist/_app_/helpers/dayjs-is-leap-year.js",
+      "./helpers/dayjs-is-same-or-after.js": "./dist/_app_/helpers/dayjs-is-same-or-after.js",
+      "./helpers/dayjs-is-same-or-before.js": "./dist/_app_/helpers/dayjs-is-same-or-before.js",
+      "./helpers/dayjs-is-same.js": "./dist/_app_/helpers/dayjs-is-same.js",
+      "./helpers/dayjs-months-short.js": "./dist/_app_/helpers/dayjs-months-short.js",
+      "./helpers/dayjs-months.js": "./dist/_app_/helpers/dayjs-months.js",
+      "./helpers/dayjs-start-of.js": "./dist/_app_/helpers/dayjs-start-of.js",
+      "./helpers/dayjs-subtract.js": "./dist/_app_/helpers/dayjs-subtract.js",
+      "./helpers/dayjs-to-now.js": "./dist/_app_/helpers/dayjs-to-now.js",
+      "./helpers/dayjs-to.js": "./dist/_app_/helpers/dayjs-to.js",
+      "./helpers/dayjs-tz.js": "./dist/_app_/helpers/dayjs-tz.js",
+      "./helpers/dayjs-week-of-year.js": "./dist/_app_/helpers/dayjs-week-of-year.js",
+      "./helpers/dayjs-weekday.js": "./dist/_app_/helpers/dayjs-weekday.js",
+      "./helpers/dayjs-weekdays-min.js": "./dist/_app_/helpers/dayjs-weekdays-min.js",
+      "./helpers/dayjs-weekdays-short.js": "./dist/_app_/helpers/dayjs-weekdays-short.js",
+      "./helpers/dayjs-weekdays.js": "./dist/_app_/helpers/dayjs-weekdays.js",
+      "./helpers/dayjs.js": "./dist/_app_/helpers/dayjs.js",
+      "./helpers/local.js": "./dist/_app_/helpers/local.js",
+      "./helpers/now.js": "./dist/_app_/helpers/now.js",
+      "./helpers/unix.js": "./dist/_app_/helpers/unix.js",
+      "./helpers/utc.js": "./dist/_app_/helpers/utc.js",
+      "./services/dayjs.js": "./dist/_app_/services/dayjs.js"
+    },
+    "main": "addon-main.cjs",
+    "type": "addon",
+    "version": 2
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "files": [
+    "addon-main.cjs",
+    "dist"
+  ]
+}

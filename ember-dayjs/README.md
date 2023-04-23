@@ -6,8 +6,10 @@ Just replace all `moment-` with `dayjs-` and try.
 
 ## Compatibility
 
-- Ember.js v3.28 or above
-- Embroider or ember-auto-import v2
+* Ember.js v3.28 or above
+* Ember CLI v3.28 or above
+* Node.js v14 or above
+
 
 ## Installation
 
@@ -63,13 +65,12 @@ Returns a Dayjs with [UTC mode](http://dayjs.com/docs/#/parsing/utc/) set.
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<date>`       | Any value(s) [interpretable as a date/time](https://day.js.org/docs/en/parse/parse) by `dayjs` (a date `String` or a `Dayjs` or a `Date`...) |
 | `outputFormat` | An optional date/time `String` [output format](https://day.js.org/docs/en/display/format), defaults to `dayjs.defaultFormat`                 |
-| `inputFormat`  | <inputFormat> An optional named argument for date/time String input format                                                                   |
+| `inputFormat`  | <inputFormat> An optional named argument for date/time String input format                                                                                      |
 
 **Example**
 
 ```hbs
-{{dayjs-format '12-1995-25' 'MM/DD/YYYY' inputFormat='MM-YYYY-DD'}}
-{{! 25/12/1995 }}
+{{dayjs-format '12-1995-25' 'MM/DD/YYYY' inputFormat='MM-YYYY-DD'}} {{! 25/12/1995 }}
 ```
 
 ### timezone
@@ -370,8 +371,8 @@ Returns the present Dayjs.
 {{unix <timestamp>}}
 ```
 
-| Parameters    | Values                                                                                                           |
-| ------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Parameters    | Values                                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------------------------------- |
 | `<timestamp>` | An integer `Number` value representing the number of milliseconds since the Unix Epoch (January 1 1970 12AM UTC) |
 
 Returns a Dayjs corresponding to the `<timestamp>`.
@@ -404,6 +405,30 @@ All helpers accept the following optional named arguments (even though they are 
 {{! if this was true initially, it will always be true despite interval }}
 ```
 
+### i18n support
+
+#### Cherry pick locales (optimal)
+
+```js
+// ember-cli-build.js
+let app = new EmberApp(defaults, {
+  'ember-dayjs': {
+    locales: ['tr'], // English is automatically included. No need to add.
+  },
+}
+```
+
+#### Cherry pick plugins (optimal)
+
+```js
+// ember-cli-build.js
+let app = new EmberApp(defaults, {
+  'ember-dayjs': {
+    plugins: ['utc', 'weekOfYear', 'relativeTime', 'duration', 'calendar'], // Case-sensitive
+  },
+}
+```
+
 ### Configure default runtime locale/timeZone
 
 #### Globally set locale
@@ -414,7 +439,8 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
-  @service dayjs;
+  @service
+  dayjs;
 
   @action
   changeLanguage(locale) {
@@ -431,7 +457,8 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
-  @service dayjs;
+  @service
+  dayjs;
 
   @action
   changeTimeZone(timeZone) {
@@ -448,7 +475,8 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
-  @service dayjs;
+  @service
+  dayjs;
 
   @action
   resetTimezone() {
