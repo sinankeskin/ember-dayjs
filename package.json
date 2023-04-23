@@ -17,7 +17,8 @@
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "npm start --workspace ember-dayjs",
     "start:test-app": "npm start --workspace test-app",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm run test --workspaces --if-present",
+    "deploy": "npm version patch && git push && git push origin --tags && npm publish --workspace ember-dayjs"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
