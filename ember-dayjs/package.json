@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.8.4",
+    "@embroider/macros": "^1.10.0",
     "dayjs": "^1.11.7"
   },
   "devDependencies": {

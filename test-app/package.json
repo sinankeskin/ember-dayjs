@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "0.10.6",
+  "version": "0.0.0",
   "description": "day.js template helpers and a service for Ember.",
   "keywords": [
     "dayjs",
@@ -30,7 +30,9 @@
     "update": "ecu --to latest && ncu -u && npm install && npm run lint:fix && npm run lint && git commit -am \"Update some packages\" && git push",
     "update:all": "run-s update deploy"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ember-dayjs": "*"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
@@ -51,7 +53,6 @@
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
-    "ember-dayjs": "0.10.6",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^6.1.1",
