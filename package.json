@@ -21,7 +21,7 @@
     "deploy": "npm version patch && git push && git push origin --tags && npm publish --workspace ember-dayjs"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
+    "concurrently": "^8.0.1",
     "prettier": "^2.8.3"
   }
 }
