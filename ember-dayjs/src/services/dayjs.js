@@ -14,7 +14,7 @@ export default class DayjsService extends Service {
 
   setLocale(locale) {
     this.useLocale(locale);
-
+    this.self.locale(locale);
     this.locale = locale;
   }
 
