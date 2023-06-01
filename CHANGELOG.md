@@ -2,6 +2,9 @@
 
 All notable changes will be documented in this file.
 
+[0.12.0] - 2023-06-01
+- When locale set we also set globally now. May change the result. Thanks [Xavier Carron](https://github.com/xav-car)
+
 [0.11.0] - 2023-04-23
 - Migrated to v2 - No need for cherry-pick locales or plugins
 
