@@ -1,6 +1,6 @@
 import { assert } from '@ember/debug';
 import Service from '@ember/service';
-import { isPresent } from '@ember/utils';
+import { isBlank } from '@ember/utils';
 import { importSync } from '@embroider/macros';
 import { tracked } from '@glimmer/tracking';
 import dayjs from 'dayjs';
@@ -19,7 +19,9 @@ export default class DayjsService extends Service {
   }
 
   useLocale(locale) {
-    assert('Locale cannot be null.', isPresent(locale));
+    if (isBlank(locale)) {
+      return assert('Locale cannot be null.');
+    }
 
     importSync(`dayjs/locale/${locale}.js`);
   }
@@ -35,7 +37,9 @@ export default class DayjsService extends Service {
   }
 
   extend(pluginName) {
-    assert('Plugin name cannot be null.', isPresent(pluginName));
+    if (isBlank(pluginName)) {
+      return assert('Plugin name cannot be null.');
+    }
 
     const { default: plugin } = importSync(`dayjs/plugin/${pluginName}.js`);
 
