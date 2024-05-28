@@ -56,7 +56,7 @@ Returns a Dayjs with [UTC mode](http://dayjs.com/docs/#/parsing/utc/) set.
 ### dayjs-format
 
 ```hbs
-{{dayjs-format <date> [outputFormat=dayjs.defaultFormat] [<inputFormat>]}}
+{{dayjs-format <date> [outputFormat=dayjs.defaultFormat] [<inputFormat>] [<advanced>]}}
 ```
 
 | Parameters     | Values                                                                                                                                       |
@@ -64,6 +64,7 @@ Returns a Dayjs with [UTC mode](http://dayjs.com/docs/#/parsing/utc/) set.
 | `<date>`       | Any value(s) [interpretable as a date/time](https://day.js.org/docs/en/parse/parse) by `dayjs` (a date `String` or a `Dayjs` or a `Date`...) |
 | `outputFormat` | An optional date/time `String` [output format](https://day.js.org/docs/en/display/format), defaults to `dayjs.defaultFormat`                 |
 | `inputFormat`  | <inputFormat> An optional named argument for date/time String input format                                                                   |
+| `advanced`     | Pass `true` to be able to use [advanced format](https://day.js.org/docs/en/plugin/advanced-format)                                           |
 
 **Example**
 
