@@ -2,6 +2,9 @@
 
 All notable changes will be documented in this file.
 
+[0.12.2] - 2023-06-01
+- You can use advanced format now ({{dayjs-format date "MMMM Do YYYY" advanced=true}}). Thanks [Courtland Allen](https://github.com/courthead)
+
 [0.12.0] - 2023-06-01
 - When locale set we also set globally now. May change the result. Thanks [Xavier Carron](https://github.com/xav-car)
 
