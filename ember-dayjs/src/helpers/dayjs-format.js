@@ -8,6 +8,10 @@ export default class DayjsFormat extends BaseHelper {
       this.dayjs.extend('customParseFormat');
     }
 
+    if (hash.advanced) {
+      this.dayjs.extend('advancedFormat');
+    }
+
     this.dayjs.useLocale(hash.locale || this.dayjs.locale);
 
     return this.dayjs
